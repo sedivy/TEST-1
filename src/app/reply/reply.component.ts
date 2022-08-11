@@ -23,7 +23,10 @@ export class ReplyComponent implements OnInit {
   constructor( private snippetService: SnippetService ) { }
 
   getSnippets(): void {
-    this.snippets = this.snippetService.getHeroes();
+    this.snippetService.getSnippets()
+    .subscribe (snippets => {
+      return this.snippets = snippets;
+    });
   }
 
   ngOnInit(): void {

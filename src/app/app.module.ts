@@ -10,13 +10,15 @@ import { PromptComponent } from './prompt/prompt.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule} from '@angular/material/input';
 import { ReplyComponent } from './reply/reply.component';
+import { MessagesComponent } from './messages/messages.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FormComponent,
     PromptComponent,
-    ReplyComponent
+    ReplyComponent,
+    MessagesComponent
   ],
   imports: [ 
     BrowserModule,
@@ -24,7 +26,8 @@ import { ReplyComponent } from './reply/reply.component';
     MatSliderModule,
     MatFormFieldModule,
     ReactiveFormsModule,
-    MatInputModule
+    MatInputModule,
+    MessagesComponent,
   ],
   providers: [],
   bootstrap: [AppComponent]
