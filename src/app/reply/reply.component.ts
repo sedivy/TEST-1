@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Snippet } from '../snippet';
-import { SNIPPETS } from '../mock-snippets';
+import { SnippetService } from '../snippet.service';
 
 @Component({
   selector: 'app-reply',
@@ -18,11 +18,16 @@ export class ReplyComponent implements OnInit {
     result: "gopd idea"
   }
 
-  snippets = SNIPPETS;
+  snippets: Snippet[] = [] ;
   
-  constructor() { }
+  constructor( private snippetService: SnippetService ) { }
+
+  getSnippets(): void {
+    this.snippets = this.snippetService.getHeroes();
+  }
 
   ngOnInit(): void {
+    this.getSnippets();
   }
 
 }
