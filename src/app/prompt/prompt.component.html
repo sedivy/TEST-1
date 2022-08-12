@@ -1,4 +1,5 @@
-<h2>prompt works!</h2>
+
+
 <form class="example-form">
     <mat-form-field class="example-full-width" appearance="fill">
       <mat-label for="name">Message</mat-label>
@@ -8,8 +9,12 @@
       <mat-hint align="end">{{message.value.length}} / 16</mat-hint>
     </mat-form-field>
   </form>
+
+<br>
+<mat-divider></mat-divider>
+<br>
   <div>
-    <h2>The value is: {{name.value}} id: {{name.value}}</h2>
+   <!-- <h2>The value is: {{name.value}} id: {{name.value}}</h2> -->
     <button type="button" (click)="updateName()">Update Name</button>
     <div *ngIf="final.value">  
       <h2>The final is: {{final.value}} </h2>
