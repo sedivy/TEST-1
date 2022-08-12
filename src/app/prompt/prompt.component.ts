@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 
+
+
 @Component({
   selector: 'app-prompt',
   templateUrl: './prompt.component.html',
@@ -18,4 +20,6 @@ export class PromptComponent implements OnInit {
   updateName() {
     this.final.setValue(this.name.getRawValue());
   }
+
+
 }

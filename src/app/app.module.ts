@@ -10,7 +10,11 @@ import { PromptComponent } from './prompt/prompt.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule} from '@angular/material/input';
 import { ReplyComponent } from './reply/reply.component';
-import { MessagesComponent } from './messages/messages.component';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatCardModule} from '@angular/material/card';
+import {MatButtonModule} from '@angular/material/button';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -18,16 +22,19 @@ import { MessagesComponent } from './messages/messages.component';
     FormComponent,
     PromptComponent,
     ReplyComponent,
-    MessagesComponent
+   
   ],
   imports: [ 
     BrowserModule,
     AppRoutingModule,
     MatSliderModule,
-    MatFormFieldModule,
+    MatFormFieldModule, 
     ReactiveFormsModule,
     MatInputModule,
-    MessagesComponent,
+    MatDividerModule,
+    MatCardModule,
+    MatButtonModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
