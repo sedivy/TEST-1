@@ -1,6 +1,6 @@
 
 <ul>
-  <li *ngFor="let snippet of snippets">
+  <li *ngFor="let snippet of ( snippets | async )">
     <div><span>id: {{snippet.id}}</span></div>
     <div><span>question: </span>{{snippet.question}}</div>
     <div><span>country: </span>{{snippet.country}}</div>

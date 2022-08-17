@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 
-
-
 @Component({
   selector: 'app-prompt',
   templateUrl: './prompt.component.html',
@@ -14,12 +12,11 @@ export class PromptComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  name  = new FormControl(''); 
-  final = new FormControl(''); 
+  name = new FormControl(''); 
+  searchPrompt : string |null = "";
 
-  updateName() {
-    this.final.setValue(this.name.getRawValue());
+  search() {
+    this.searchPrompt = this.name.value;
   }
-
 
 }

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Snippet } from '../snippet';
 import { SnippetService } from '../snippet.service';
 
@@ -8,8 +9,21 @@ import { SnippetService } from '../snippet.service';
   styleUrls: ['./reply.component.css']
 })
 export class ReplyComponent implements OnInit {
+  
+  snippets: Observable<Snippet[]> | undefined ;
+  
+  constructor( private snippetService: SnippetService ) { }
 
-  snippet: Snippet = {
+  @Input()
+  search : string = '';
+
+
+  ngOnInit(): void {
+    this.snippets = this.snippetService.getSnippets(this.search)
+  }
+
+}
+/**snippet: Snippet = {
     id: 1,
     question: "how is it going",
     country: "USA",
@@ -17,20 +31,4 @@ export class ReplyComponent implements OnInit {
     confidence: 0.99,
     result: "gopd idea"
   }
-
-  snippets: Snippet[] = [] ;
-  
-  constructor( private snippetService: SnippetService ) { }
-
-  getSnippets(): void {
-    this.snippetService.getSnippets()
-    .subscribe (snippets => {
-      return this.snippets = snippets;
-    });
-  }
-
-  ngOnInit(): void {
-    this.getSnippets();
-  }
-
-}
+ */

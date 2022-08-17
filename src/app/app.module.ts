@@ -14,7 +14,11 @@ import {MatDividerModule} from '@angular/material/divider';
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import { HttpClientModule } from '@angular/common/http';
-
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService } from './in-memory-data.service';
+import {MatTableModule} from '@angular/material/table';
+import { BasicTableComponent } from './basic-table/basic-table.component'; 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -22,7 +26,7 @@ import { HttpClientModule } from '@angular/common/http';
     FormComponent,
     PromptComponent,
     ReplyComponent,
-   
+    BasicTableComponent,
   ],
   imports: [ 
     BrowserModule,
@@ -35,6 +39,12 @@ import { HttpClientModule } from '@angular/common/http';
     MatCardModule,
     MatButtonModule,
     HttpClientModule,
+    HttpClientInMemoryWebApiModule,
+    MatTableModule,
+    BrowserAnimationsModule,
+    HttpClientInMemoryWebApiModule.forRoot(
+      InMemoryDataService, { dataEncapsulation: false }
+    )
   ],
   providers: [],
   bootstrap: [AppComponent]
