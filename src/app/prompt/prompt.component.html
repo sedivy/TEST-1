@@ -3,22 +3,24 @@
 <form class="example-form">
     <mat-form-field class="example-full-width" appearance="fill">
       <mat-label for="name">Message</mat-label>
-      <input matInput #message maxlength="16" placeholder="Ex. I need help with..." id="name" type="text" [formControl]="name">
+      <input matInput #message maxlength="64" placeholder="Ex. I need help with..." id="name" type="text" [formControl]="name">
   
       <mat-hint align="start"><strong>Don't disclose personal info</strong> </mat-hint>
-      <mat-hint align="end">{{message.value.length}} / 16</mat-hint>
+      <mat-hint align="end">{{message.value.length}} / 64</mat-hint>
     </mat-form-field>
   </form>
 
 <br>
 <mat-divider></mat-divider>
 <br>
+<div>The value is: {{message.value}}   </div> 
+<br>
   <div>
    <!-- <h2>The value is: {{name.value}} id: {{name.value}}</h2> -->
     <button type="button" (click)="search()">Search</button>
     <div *ngIf="searchPrompt">  
-<!--      <h2>The final is: {{searchPrompt}} </h2>
-      <app-reply search = "searchPrompt"></app-reply>-->
+     <h2>The final is: {{searchPrompt}} </h2>
+      <app-reply search = {{searchPrompt}}></app-reply>
       <app-basic-table></app-basic-table>
     </div>
   </div>
