@@ -16,7 +16,7 @@ import {MatButtonModule} from '@angular/material/button';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
-import {MatTableModule} from '@angular/material/table';
+import { MatTableModule } from '@angular/material/table';
 import { BasicTableComponent } from './basic-table/basic-table.component'; 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -39,12 +39,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatCardModule,
     MatButtonModule,
     HttpClientModule,
-    HttpClientInMemoryWebApiModule,
     MatTableModule,
     BrowserAnimationsModule,
-    HttpClientInMemoryWebApiModule.forRoot(
+    
+    /* HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false }
-    )
+    ) */
   ],
   providers: [],
   bootstrap: [AppComponent]

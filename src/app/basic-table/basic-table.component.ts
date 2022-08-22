@@ -18,9 +18,10 @@ export class BasicTableComponent implements OnInit {
   search : string = '';
 
   ngOnInit(): void {
-   this.snippets = this.snippetService.getSnippets(this.search)
-  }
+    console.log ("ngOnInit basic-table: ", this.search);
+    this.snippets = this.snippetService.postQuestion ( this.search )
+  }  /* postQuestion (this.search )   getSnippets()*/
 
-  displayedColumns: string[] = ['id', 'question', 'country', 'year', "confidence", "result"];
+  displayedColumns: string[] = ["id", 'answer', 'intent', 'country', 'year'];
 
 }

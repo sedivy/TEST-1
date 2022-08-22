@@ -9,10 +9,10 @@ import { Snippet } from './snippet';
 export class InMemoryDataService implements InMemoryDbService {
   createDb() {
     const snippets = [
-      { id: 12, question: 'What is the population', country: 'Cuba', year: 2000, confidence: 0.66, result: 'good', },
-      { id: 13, question: 'What is the undernurishment', country: 'China', year: 2002, confidence: 0.76, result: 'good', },
-      { id: 14, question: 'What is the alcohol consumption', country: 'JAR', year: 1992, confidence: 0.86, result: 'good', },
-      { id: 15, question: 'How mnany 65 woman', country: 'France', year: 1962, confidence: 0.81, result: 'good' }    
+      { id: 10, answer: 12, intent: 'What is the population', country: 'Cuba', year: 2000,  },
+      { id: 11, answer: 13, intent: 'What is the undernurishment', country: 'China', year: 2002, },
+      { id: 12, answer: 14, intent: 'What is the alcohol consumption', country: 'JAR', year: 1992, },
+      { id: 13, answer: 15, intent: 'How mnany 65 woman', country: 'France', year: 1962, }    
     ];
     return {snippets};
   }
@@ -27,7 +27,7 @@ export class InMemoryDataService implements InMemoryDbService {
   }
 }
 
-/**export class InMemoryDataService {
-
-  constructor() { }
-} */
+/** answer	:	59555439
+intent	:	Population, total
+country	:	France
+year	:	1995 */

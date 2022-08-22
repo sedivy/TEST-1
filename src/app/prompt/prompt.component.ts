@@ -17,6 +17,7 @@ export class PromptComponent implements OnInit {
 
   search() {
     this.searchPrompt = this.name.value;
+    console.log ("prompt search: ", this.searchPrompt);
   }
 
 }

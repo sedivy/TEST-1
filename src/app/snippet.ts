@@ -1,11 +1,14 @@
 
 export interface Snippet {
-    id: number;
-    question: string;
-    country: string;
-    year: number;
-    confidence: any;
-    result: string;
-  }
-  
-  
+  id : number;
+  answer: number;
+  intent: string;
+  country: string;
+  year: number;
+}  
+  /* 
+answer	:	59555439
+intent	:	Population, total
+country	:	France
+year	:	1995
+ */

@@ -20,13 +20,16 @@ export class ReplyComponent implements OnInit {
 
   ngOnInit(): void {
     var hovno: string = "Hovno"
-    console.log ("ngOnInit: ", this.search);
+    console.log ("ngOnInit reply: ", this.search);
 
-    this.snippets = this.snippetService.postQuestion(this.search)
-  }
+   /*  this.snippets = this.snippetService.getSnippets() */
+  }  
 
 }
-/**snippet: Snippet = {
+/**
+ * (this.search
+ * 
+ * snippet: Snippet = {
     id: 1,
     question: "how is it going",
     country: "USA",

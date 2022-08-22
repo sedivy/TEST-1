@@ -11,11 +11,13 @@ export class SnippetService {
 
   constructor(private http: HttpClient) { }
 
-  private snippetUrl = 'api/snippets';  // URL to web api
+  private snippetUrl = 'https://table-qa-develop.alquist.ai/v2/models/TableQA/infer';  // URL to web api
+//  private snippetUrl = 'api/snippets';  // URL to web api
+// https://table-qa-develop.alquist.ai/v2/models/TableQA/infer
 
   /** GET heroes from the server */
-  getSnippets(search : string ): Observable<Snippet[]> {
-    console.log ("get:  ", search);
+  getSnippets( ): Observable<Snippet[]> {
+    console.log ("get: no param ");
     return this.http.get<Snippet[]>(this.snippetUrl)
   }
 
@@ -25,7 +27,7 @@ export class SnippetService {
       query : search,
       topk : 4
     }
-    console.log ("post: ", search);
+    console.log ("snippet-sevice post: ", search);
     return this.http.post<Snippet[]>(this.snippetUrl, body, this.httpOptions);
   }  
     /* .pipe(
