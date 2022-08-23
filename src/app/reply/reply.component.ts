@@ -17,11 +17,8 @@ export class ReplyComponent implements OnInit {
   @Input()
   search : string = '';
 
-
   ngOnInit(): void {
-    var hovno: string = "Hovno"
     console.log ("ngOnInit reply: ", this.search);
-
    /*  this.snippets = this.snippetService.getSnippets() */
   }  
 

@@ -1,6 +1,6 @@
 
 export interface Snippet {
-  id : number;
+  /* id : number; */
   answer: number;
   intent: string;
   country: string;
@@ -12,3 +12,7 @@ intent	:	Population, total
 country	:	France
 year	:	1995
  */
+
+export interface RetSnippet {
+  results : Snippet[];
+}
