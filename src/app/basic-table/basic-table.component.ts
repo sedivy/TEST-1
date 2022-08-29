@@ -1,5 +1,5 @@
 import { registerLocaleData } from '@angular/common';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { BehaviorSubject, Observable, Subject } from 'rxjs';
 import { Snippet } from '../snippet';
 import { SnippetService } from '../snippet.service';
@@ -9,26 +9,28 @@ import { SnippetService } from '../snippet.service';
   templateUrl: './basic-table.component.html',
   styleUrls: ['./basic-table.component.css']
 })
-export class BasicTableComponent implements OnInit {
+export class BasicTableComponent implements OnChanges {
 
   constructor( private snippetService: SnippetService ) { }
 
-  snippets = new BehaviorSubject <Snippet[]>([]) ;
+  snippets = new Subject <Snippet[]>() ;
 
   @Input()
   search : string = '';
 
 
-  ngOnInit(): void {
-    console.log ("ngOnInit basic-table: ", this.search);
+  ngOnChanges (changes: SimpleChanges): void {
+    console.log ("OnChanges basic-table: ", this.search);
     this.snippetService.postQuestion ( this.search ).subscribe((result) => {
       console.log ("result", result);
       this.snippets.next (result.results)
     });
-    console.log ("ngOnInit this.snippet: ", this.snippets);
+    console.log ("OnChanges this.snippet: ", this.snippets);
   }  /* postQuestion (this.search )   getSnippets()*/
 
+  ngOnInit(): void {
+    console.log ("OnInit")
+  }
   displayedColumns: string[] = ['answer', 'intent', 'country', 'year'];
-  /* displayedColumns: string[] = ["id", 'answer', 'intent', 'country', 'year']; */
-
+  
 }
