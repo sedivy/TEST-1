@@ -1,14 +1,16 @@
-<div class="example-form">
-  <mat-form-field class="example-full-width" appearance="fill">
-    <mat-label for="name">Message</mat-label>
+<div class="mat-elevation-z8" >
+  <mat-form-field style = "width:100%" appearance="fill">
+    <mat-label for="name">Question</mat-label>
     <input matInput #message maxlength="64" placeholder="Ex. I need help with..." id="name" type="text" [formControl]="name">
   
    <!--  <input type="text" [(ngModel)]="employeeDetails.name" class="form-control" placeholder="Name"> -->
 
-    <mat-hint align="start"><strong>Don't disclose personal info</strong> </mat-hint>
+    <mat-hint align="start"><strong>Ask series expression, country, year</strong> </mat-hint>
     <mat-hint align="end">{{message.value.length}} / 64</mat-hint>
   </mat-form-field>
+  <div style = "display: flex; justify-content : center; padding: 5%;">
   <button type="button" (click)="search()" mat-raised-button color="primary">Search</button>
+  </div>
 </div>
 
   
@@ -20,4 +22,4 @@
     </div>
   
   <mat-divider></mat-divider>
-  <div>The value is: {{message.value}}   </div>   
+     

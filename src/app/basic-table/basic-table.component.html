@@ -1,5 +1,5 @@
  <!-- <p>app-basic-table works!</p> -->
-<mat-table [dataSource]="snippets"  >
+<mat-table [dataSource]="snippets" class="mat-elevation-z8" >
   <!-- Position Column 
   <ng-container matColumnDef="id">
       <mat-header-cell *matHeaderCellDef> Id</mat-header-cell>
@@ -8,26 +8,26 @@
 
   <!-- Position Column -->
   <ng-container matColumnDef="answer">
-    <mat-header-cell *matHeaderCellDef> Answer</mat-header-cell>
-    <mat-cell *matCellDef="let element"> {{element.answer}} </mat-cell>
+    <mat-header-cell *matHeaderCellDef [ngClass]="'w-20'"> Answer</mat-header-cell>
+    <mat-cell *matCellDef="let element" [ngClass]="'w-20'"> {{element.answer}} </mat-cell>
   </ng-container>
 
   <!-- Weight Column -->
   <ng-container matColumnDef="intent">
-      <mat-header-cell *matHeaderCellDef> Intent </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.intent}} </mat-cell>
+      <mat-header-cell *matHeaderCellDef [ngClass]="'w-50'"> Intent </mat-header-cell>
+      <mat-cell *matCellDef="let element" [ngClass]="'w-50'"> {{element.intent}} </mat-cell>
   </ng-container>
   
   <!-- Name Column -->
   <ng-container matColumnDef="country">
-      <mat-header-cell *matHeaderCellDef> Country </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.country}} </mat-cell>
+      <mat-header-cell *matHeaderCellDef [ngClass]="'w-20'"> Country </mat-header-cell>
+      <mat-cell *matCellDef="let element" [ngClass]="'w-20'"> {{element.country}} </mat-cell>
   </ng-container>
     
   <!-- Symbol Column -->
   <ng-container matColumnDef="year">
-        <mat-header-cell *matHeaderCellDef> Year </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.year}} </mat-cell>
+        <mat-header-cell *matHeaderCellDef [ngClass]="'w-10'"> Year </mat-header-cell>
+        <mat-cell *matCellDef="let element" [ngClass]="'w-10'"> {{element.year}} </mat-cell>
   </ng-container>
     
   <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
