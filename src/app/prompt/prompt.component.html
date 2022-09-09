@@ -1,4 +1,4 @@
-<div class="mat-elevation-z8" style = "margin-top : 2%">
+<mat-card class="mat-elevation-z8" style = "margin-top : 2%; margin-bottom : 2%">
   <mat-form-field style = "width:100%; margin-bottom : 2%" appearance="fill" >
     <mat-label for="name">Question</mat-label>
     <input matInput #message maxlength="64" placeholder="Ex. I need help with..." id="name" type="text" [formControl]="name">
@@ -11,7 +11,7 @@
   <div style = "display: flex; justify-content : center; padding: 3%; margin-top : 2%">
   <button type="button" (click)="search()" mat-raised-button color="primary">Search</button>
   </div>
-</div>
+</mat-card>
 
   
    <!-- <h2>The value is: {{name.value}} id: {{name.value}}</h2> -->

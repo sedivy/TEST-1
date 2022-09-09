@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "sdmx-1": {
+      "hosting": {
+        "test-1": [
+          "sdmx-1"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "sdmx-1"
+  }
+}
